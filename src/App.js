@@ -10,13 +10,39 @@ import {
 
 class App extends Component {
   state = {
-    words: [],
-    currentTeam: "",
-    gameState: "",
+    words: [
+      { title: "KANGAROO", colour: "black", status: "hidden-word" },
+      { title: "ATLANTIS", colour: "red", status: "hidden-word" },
+      { title: "HIMALAYAS", colour: "blue", status: "hidden-word" },
+      { title: "COVER", colour: "neutral", status: "hidden-word" },
+      { title: "GAS", colour: "red", status: "hidden-word" },
+      { title: "PILOT", colour: "red", status: "hidden-word" },
+      { title: "MINE", colour: "blue", status: "hidden-word" },
+      { title: "SLUG", colour: "blue", status: "hidden-word" },
+      { title: "AZTEC", colour: "neutral", status: "hidden-word" },
+      { title: "MOUNT", colour: "red", status: "hidden-word" },
+      { title: "ROCK", colour: "blue", status: "hidden-word" },
+      { title: "CHINA", colour: "neutral", status: "hidden-word" },
+      { title: "CLUB", colour: "neutral", status: "hidden-word" },
+      { title: "PLATYPUS", colour: "neutral", status: "hidden-word" },
+      { title: "STREAM", colour: "red", status: "hidden-word" },
+      { title: "ICE", colour: "neutral", status: "hidden-word" },
+      { title: "BILL", colour: "blue", status: "hidden-word" },
+      { title: "SUPERHERO", colour: "neutral", status: "hidden-word" },
+      { title: "UNDERTAKER", colour: "blue", status: "hidden-word" },
+      { title: "GREECE", colour: "red", status: "hidden-word" },
+      { title: "MINT", colour: "red", status: "hidden-word" },
+      { title: "BOX", colour: "blue", status: "hidden-word" },
+      { title: "ROULETTE", colour: "red", status: "hidden-word" },
+      { title: "ROOT", colour: "blue", status: "hidden-word" },
+      { title: "MODEL", colour: "red", status: "hidden-word" },
+    ],
+    currentTeam: "red",
+    gameState: "game-started",
     user: "player",
   };
 
-  componentDidMount() {
+  /*componentDidMount() {
     getWords(this.state.gameState).then((data) => {
       this.setState({
         words: data.words,
@@ -24,7 +50,7 @@ class App extends Component {
         gameState: data.gameState,
       });
     });
-  }
+  }*/
 
   shouldComponentUpdate(nextState, nextProps) {
     if (
@@ -115,8 +141,8 @@ class App extends Component {
       currentTeam: currentTeam,
     });
 
-    if (prevGameState === "game-started" || word.colour === "black")
-      updateWord(index, gameState, currentTeam);
+    /*if (prevGameState === "game-started" || word.colour === "black")
+      updateWord(index, gameState, currentTeam);*/
   };
 
   setUserAsPlayer = () => {
@@ -137,13 +163,13 @@ class App extends Component {
   };
 
   startNewGame = () => {
-    getWordsForNewGame(this.state.gameState).then((data) => {
+    /* getWordsForNewGame(this.state.gameState).then((data) => {
       this.setState({
         words: data.words,
         currentTeam: data.currentTeam,
         gameState: data.gameState,
       });
-    });
+    });*/
   };
 }
 

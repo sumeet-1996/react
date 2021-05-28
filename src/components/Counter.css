@@ -1,0 +1,30 @@
+.counter-container {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.counter {
+  margin: auto;
+}
+.counter-teamName {
+  display: flex;
+  justify-content: center;
+}
+.counter-reset-button {
+  float: right;
+  margin-right: 1rem;
+}
+.scores {
+  float: left;
+}
+.display-winner {
+  margin: auto;
+  clear: left;
+}
+
+.blueText {
+  color: blue;
+}
+
+.redText {
+  color: red;
+}

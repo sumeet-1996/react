@@ -1,0 +1,56 @@
+.word {
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+  height: 5rem;
+  border: 1px solid #ececec;
+  border-radius: 1rem;
+  border-color: black;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #e8e8e8;
+}
+.player {
+  font-weight: normal;
+}
+.spymaster {
+  font-weight: 700;
+  cursor: not-allowed !important;
+}
+.blue.player.revealed,
+.blue.spymaster.revealed {
+  background: #4183cc;
+  color: #fff;
+}
+.red.player.revealed,
+.red.spymaster.revealed {
+  background: #d13030;
+  color: #fff;
+}
+.neutral.player.revealed,
+.neutral.spymaster.revealed {
+  background: #ede2cc;
+}
+.black.player.revealed,
+.black.spymaster.revealed {
+  background: black;
+  color: white;
+}
+.black.spymaster.hidden-word,
+.black.player.hidden-word.game-over {
+  background: #999;
+  border: 4px solid #000;
+}
+.blue.spymaster.hidden-word {
+  color: #4183cc;
+}
+.red.spymaster.hidden-word {
+  color: #d13030;
+}
+.red.player.hidden-word.game-over {
+  background: rgba(209, 48, 48, 0.4);
+}
+.blue.player.hidden-word.game-over {
+  background: rgba(65, 131, 204, 0.4);
+}

@@ -1,0 +1,25 @@
+.board {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 50rem;
+}
+.main-grid {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  row-gap: 5px;
+  align-items: center;
+}
+.enable-button {
+  background: lightgreen;
+}
+.action-container {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  float: right;
+}
+.start-new-game {
+  margin-left: 1rem;
+}

@@ -5,8 +5,7 @@ import "./App.css";
 import {
   getWords,
   updateWord,
-  getWordsForNewGame,
-  getListOfWords,
+  getWordsForNewGame
 } from "./services/fetchWords";
 
 class App extends Component {
@@ -18,7 +17,13 @@ class App extends Component {
   };
 
   componentDidMount() {
-    getWords(this.state.gameState).then((data) => {
+    this.getData();
+
+    setInterval(this.getData, 2000)
+  }
+
+  getData = () =>{
+    getWords().then((data) => {
       this.setState({
         words: data.words,
         currentTeam: data.currentTeam,
@@ -134,20 +139,20 @@ class App extends Component {
     } else if (currentTeam === "blue") {
       currentTeam = "red";
     }
-    this.setState({ currentTeam });
+    if (this.state.gameState === "game-started" ){
+      this.setState({ currentTeam });
+      updateWord(-1, this.state.gameState, currentTeam);
+    }
   };
 
   startNewGame = () => {
-    /*getWordsForNewGame(this.state.gameState).then((data) => {
+    getWordsForNewGame(this.state.gameState).then((data) => {
       this.setState({
         words: data.words,
         currentTeam: data.currentTeam,
         gameState: data.gameState,
       });
-    });*/
-
-    const data = getListOfWords();
-    console.log(data);
+    });
   };
 }
 
